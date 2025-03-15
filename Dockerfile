@@ -1,5 +1,5 @@
 # Dockerfile
-FROM hexpm/elixir:1.15.5-erlang-26.1.2-alpine-3.18.0 as build
+FROM hexpm/elixir:1.15.5-erlang-26.1.2-alpine-3.18 as build
 
 RUN apk add --no-cache build-base npm git python3
 
