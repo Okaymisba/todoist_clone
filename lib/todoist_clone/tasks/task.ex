@@ -4,16 +4,16 @@ defmodule TodoistClone.Tasks.Task do
 
   schema "tasks" do
     field :title, :string
-    field :due_date, :naive_datetime
-    field :user_id, :id
+    field :due_date, :utc_datetime
+    belongs_to :user, TodoistClone.Accounts.User
 
-    timestamps(type: :utc_datetime)
+    timestamps()
   end
 
-  @doc false
+  
   def changeset(task, attrs) do
     task
-    |> cast(attrs, [:title, :due_date])
-    |> validate_required([:title, :due_date])
+    |> cast(attrs, [:title, :due_date, :user_id])
+    |> validate_required([:title, :due_date, :user_id])
   end
 end
