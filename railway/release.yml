@@ -1,0 +1,7 @@
+# railway/release.yml
+build:
+  dockerfilePath: ./Dockerfile
+  context: .
+
+start:
+  cmd: ./bin/todoist_clone start
